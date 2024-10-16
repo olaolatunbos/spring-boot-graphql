@@ -1,0 +1,15 @@
+type Book{
+    id: ID,
+    name:String
+    author:String
+    isbn: String
+    availableCopies:Int
+    totalPages:Int
+    category:String
+}
+
+
+type Query{
+    getBooks:[Book]
+    getBooksByCategory(category:String):[Book]
+}
