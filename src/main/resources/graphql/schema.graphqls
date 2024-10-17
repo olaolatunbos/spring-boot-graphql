@@ -13,3 +13,7 @@ type Query{
     getBooks:[Book]
     getBooksByCategory(category:String):[Book]
 }
+
+type Mutation{
+    updateStock(id:ID,availableCopies:Int):Book
+}

@@ -21,5 +21,18 @@ public class BookService {
         return repository.findAll();
     }
 
+    public Book addBook(Book book){
+        return repository.save(book);
+    }
+
+    public Book updateAvailableCopies(int id, int availableCopies){
+
+        Book existingBook= repository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Book not found with id "+id));
+
+        existingBook.setAvailableCopies(availableCopies);
+        return repository.save(existingBook);
+    }
+
 }
 
